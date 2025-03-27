@@ -55,7 +55,7 @@ public class CohereTests
         _httpClientFactory = _serviceProvider.GetRequiredService<IHttpClientFactory>();
     }
 
-    [Fact]
+    [Fact(Skip = "NOT USE API KEY")]
     public async Task Basic_cohere_reranking()
     {
         var cohereClient = new RawCohereClient(_serviceProvider);
@@ -69,7 +69,7 @@ public class CohereTests
         Assert.Equal([2, 3, 0, 1], ReRankResult.Results.Select(r => r.Index));
     }
 
-    [Fact]
+    [Fact(Skip = "NOT USE API KEY")]
     public async Task Can_rerank_empty_document_list()
     {
         var cohereClient = new RawCohereClient(_serviceProvider);
@@ -79,7 +79,7 @@ public class CohereTests
         Assert.True(ReRankResult.Results.Count == 0);
     }
 
-    [Fact]
+    [Fact(Skip = "NOT USE API KEY")]
     public async Task Basic_cohere_Rag_streaming()
     {
         var cohereClient = new RawCohereClient(_serviceProvider);
@@ -96,7 +96,7 @@ public class CohereTests
         var list = await asiterator.ToListAsync();
     }
 
-    [Fact]
+    [Fact(Skip = "NOT USE API KEY")]
     public async Task Basic_cohere_Rag()
     {
         var cohereClient = new RawCohereClient(_serviceProvider);
@@ -116,7 +116,7 @@ public class CohereTests
         Assert.True(ragResponse.Citations.Count > 1);
     }
 
-    [Fact]
+    [Fact(Skip = "NOT USE API KEY")]
     public async Task Basic_cohere_embed_test()
     {
         var cohereClient = new RawCohereClient(_serviceProvider);
@@ -135,7 +135,7 @@ public class CohereTests
         Assert.Equal(1024, embedResult.Embeddings.Values[0].Length);
     }
 
-    [Fact]
+    [Fact(Skip = "NOT USE API KEY")]
     public void Tokenizer_raw_test()
     {
         CohereTokenizer tokenizer = new(_httpClientFactory);

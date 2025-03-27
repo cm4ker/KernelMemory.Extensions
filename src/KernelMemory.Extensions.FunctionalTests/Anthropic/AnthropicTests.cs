@@ -31,7 +31,8 @@ public class AnthropicTests
         _serviceProvider = services.BuildServiceProvider();
     }
 
-    [Theory]
+    
+    [Theory(Skip = "NOT USE API KEY")]
     [InlineData(AnthropicTextGenerationConfiguration.HaikuModelName)]
     //[InlineData(AnthropicTextGenerationConfiguration.Sonnet35ModelName)] //save money
     public async Task Simple_call_some_models(string modelName)
