@@ -8,6 +8,7 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using System.Text.Json;
 using System.Threading;
+using Microsoft.KernelMemory;
 
 namespace SemanticMemory.Helper;
 
@@ -44,7 +45,7 @@ public class LmStudioTextGeneration : ITextGenerator
     }
 
     /// <inheritdoc />
-    public async IAsyncEnumerable<string> GenerateTextAsync(
+    public async IAsyncEnumerable<GeneratedTextContent> GenerateTextAsync(
         string prompt,
         TextGenerationOptions options,
         [EnumeratorCancellation] CancellationToken cancellationToken = default)

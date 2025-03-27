@@ -13,7 +13,6 @@
 
   <ItemGroup>
     <PackageReference Include="CommandDotNet.Spectre" />
-    <PackageReference Include="Alkampfer.KernelMemory.ElasticSearch" />
     <PackageReference Include="Microsoft.KernelMemory.AI.AzureOpenAI" />
   </ItemGroup>
 
