@@ -19,7 +19,7 @@ public static class Program
         services.AddSingleton<SBertSample>();
         services.AddSingleton<BasicSample>();
         services.AddSingleton<TextCleanerHandler>();
-        services.AddSingleton<CustomSearchPipelineBase>();
+        // services.AddSingleton<CustomSearchPipelineBase>();
         services.AddSingleton<AnthropicSample>();
         services.AddSingleton<ContextualRetrievalSample>();
         services.AddHttpClient();
@@ -32,7 +32,7 @@ public static class Program
             ["Basic Sample"] = typeof(BasicSample),
             ["Custom Pipeline (text cleaner)"] = typeof(SimpleBookIndexingWithTextCleaning),
             ["SBert in action"] = typeof(SBertSample),
-            ["Custom Search pipeline (Basic)"] = typeof(CustomSearchPipelineBase),
+            // ["Custom Search pipeline (Basic)"] = typeof(CustomSearchPipelineBase),
             ["Anthropic"] = typeof(AnthropicSample),
             ["Contextual retrieval"] = typeof(ContextualRetrievalSample),
             ["Exit"] = null
